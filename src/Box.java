@@ -1,31 +1,41 @@
 public class Box {
-    public static boolean isTwoObjectsqual(Box a, Box b) {
-      return a.width == b.width && a.height == b.height;
-    }
-  
-    private int width;
-    private int height;
-    
-    public Box(int width, int height) {
-      this.width = width;
-      this.height = height;
-    }
-  
-    public Box(Box b) {
-      width = b.width;
-      height = b.height;
-    }
-  
-    public boolean isEqual(Box b) {
-      return width == b.width && height == b.height;
-    }
-  
-    public Box duplicate() {
-      return new Box(this);
-    }
+  int width;
+  int height;
+
+  Box(int w, int h){
+      width = w;
+      height = h;
+  }
+
+
+  Box(Box b){
+      this.width = b.width;
+      this.height = b.height;
+  }
+
+  boolean isEqual(Box b){
+      if(this.width == b.width && this.height == b.height)
+      return true;
+      else
+      return false;
+  }
+
+
+  Box duplicate(){
+      Box temp = new Box(this.width, this.height);
+      return temp;
+  }
+
+
+  static boolean isTwoObjectsEqual(Box b1, Box b2){
+      if(b1.width == b2.width && b1.height == b2.height)
+      return true;
+      else
+      return false;
+  }
   
     public void display() {
-      System.out.println("Width is %d and height is %d");
+      System.out.println("Width is " +this.width + " height is " +this.height);
        
     }
   }
